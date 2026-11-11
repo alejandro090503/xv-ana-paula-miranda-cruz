@@ -12,12 +12,12 @@
 <meta property="og:url" content="https://xv-ana-paula-miranda-cruz.vercel.app/">
 <meta property="og:title" content="Mis XV Años · Ana Paula · 26 Diciembre 2026">
 <meta property="og:description" content="Te invito a celebrar mis XV años · Sábado 26 de diciembre de 2026 · Villahermosa, Tabasco">
-<meta property="og:image" content="https://xv-ana-paula-miranda-cruz.vercel.app/og-image.jpg">
-<meta property="og:image:secure_url" content="https://xv-ana-paula-miranda-cruz.vercel.app/og-image.jpg">
+<meta property="og:image" content="https://xv-ana-paula-miranda-cruz.vercel.app/og-image.jpg?v=2">
+<meta property="og:image:secure_url" content="https://xv-ana-paula-miranda-cruz.vercel.app/og-image.jpg?v=2">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Invitación a los XV años de Ana Paula">
+<meta property="og:image:alt" content="Sobre de la invitación con sello AP">
 <meta property="og:locale" content="es_MX">
 
 <!-- Twitter -->
@@ -25,7 +25,7 @@
 <meta name="twitter:url" content="https://xv-ana-paula-miranda-cruz.vercel.app/">
 <meta name="twitter:title" content="Mis XV Años · Ana Paula · 26 Diciembre 2026">
 <meta name="twitter:description" content="Te invito a celebrar mis XV años · Sábado 26 de diciembre de 2026 · Villahermosa, Tabasco">
-<meta name="twitter:image" content="https://xv-ana-paula-miranda-cruz.vercel.app/og-image.jpg">
+<meta name="twitter:image" content="https://xv-ana-paula-miranda-cruz.vercel.app/og-image.jpg?v=2">
 
 <link rel="preload" as="image" href="fotos/hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1521,8 +1521,8 @@ body.gift-locked .sm{opacity:0!important;pointer-events:none!important}
 
 /* --- Partículas: flores azul y blanco --- */
 .particle--flower{width:22px;height:22px;filter:drop-shadow(0 2px 3px rgba(30,58,138,.18))}
-.particle--flower svg{width:100%;height:100%;display:block}
-.particle--petal{width:12px;height:16px}
+.particle--flower img,.particle--petal img{width:100%;height:100%;object-fit:contain;display:block;pointer-events:none}
+.particle--flower{filter:drop-shadow(0 3px 4px rgba(14,27,69,.18))}
 
 /* ===== LEGIBILIDAD (invitados mayores) — solo tamaños/pesos ===== */
 body{font-weight:500}
@@ -2346,13 +2346,30 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
   text-shadow:0 0 18px rgba(251,252,254,.9),0 0 4px rgba(251,252,254,.8);
 }
 
+
+/* ===== CASTILLOS DIFUMINADOS DE FONDO ===== */
+.castle-bg{position:absolute;z-index:0;pointer-events:none;bottom:150px;width:min(62%,380px);aspect-ratio:620/900;opacity:.3;
+  background:url('castillos/castillo-a.webp') center bottom/contain no-repeat;
+  -webkit-mask-image:linear-gradient(to top,transparent 0,#000 90px,#000 75%,transparent 100%);
+          mask-image:linear-gradient(to top,transparent 0,#000 90px,#000 75%,transparent 100%);
+  animation:castleFloat 14s ease-in-out infinite alternate}
+.castle-bg--b{background-image:url('castillos/castillo-b.webp');aspect-ratio:1;width:min(70%,420px);opacity:.32}
+.castle-bg--l{left:-6%}
+.castle-bg--r{right:-6%}
+.castle-bg--c{left:50%;margin-left:calc(min(62%,380px) / -2);opacity:.2}
+.castle-bg--flip{scale:-1 1}
+.castle-bg--d2{animation-delay:-5s}.castle-bg--d3{animation-delay:-9s}
+@keyframes castleFloat{0%{transform:translateY(0)}100%{transform:translateY(-12px)}}
+@media (min-width:900px){.castle-bg{opacity:.34}}
+@media (prefers-reduced-motion:reduce){.castle-bg{animation:none}}
+
 </style>
 </head>
 <body>
 
 <!-- ENVELOPE OPENING SEQUENCE -->
 <div id="envelope-screen" role="button" aria-label="Toca para abrir la invitación" tabindex="0">
-  <img id="env-image" src="envelope.png" alt="">
+  <img id="env-image" src="envelope.jpg" alt="">
   <video id="env-video" muted playsinline preload="auto">
     <source src="envelope.mp4" type="video/mp4">
   </video>
@@ -2432,6 +2449,7 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
 
   <!-- VERSO -->
   <section class="section-surface" id="mensaje">
+    <div class="castle-bg castle-bg--c" aria-hidden="true"></div>
     <div class="ink-bg ink-bg--oval" aria-hidden="true"><i></i></div>
     <div class="container">
       <div class="verse-wrap">
@@ -2457,6 +2475,7 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
 
   <!-- PADRES Y PADRINOS -->
   <section class="section-paper familia" id="familia">
+    <div class="castle-bg castle-bg--b castle-bg--r castle-bg--d2" aria-hidden="true"></div>
     <div class="ink-bg ink-bg--top ink-bg--b ink-bg--d1" aria-hidden="true"><i></i></div>
     <div class="container fam-inner">
       <div class="eyebrow">Mi familia</div>
@@ -2558,6 +2577,7 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
 
   <!-- COUNTDOWN · reloj antiguo -->
   <section class="section-surface countdown" id="cuenta">
+    <div class="castle-bg castle-bg--l castle-bg--d3" aria-hidden="true"></div>
     <div class="container">
       <div class="eyebrow">Cuenta regresiva</div>
       <h2>Falta <em>muy</em> poco</h2>
@@ -2734,6 +2754,7 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
   <!-- GALERÍA 3D CON ESPEJO (boda-veronica-y-andres) -->
   <!-- GALERÍA — CARRUSEL 3D -->
   <section class="section-surface gallery" id="galeria">
+    <div class="castle-bg castle-bg--b castle-bg--l castle-bg--flip" aria-hidden="true"></div>
     <div class="container c3-head">
       <div class="eyebrow">Momentos</div>
       <h2>Mis <em>recuerdos</em></h2>
@@ -2763,7 +2784,27 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
             <span class="c3-refl" aria-hidden="true"><img src="fotos/g4.jpg" alt="" width="700" height="980" decoding="async" draggable="false"><span class="c3-veil"></span></span>
             <span class="c3-shade" aria-hidden="true"></span>
           </button>
-        </div>
+                  <button class="c3-card" type="button" aria-label="Ampliar foto 1 de 4">
+            <span class="c3-photo"><img src="fotos/g1.jpg" alt="Ana Paula" width="700" height="980" decoding="async" draggable="false"></span>
+            <span class="c3-refl" aria-hidden="true"><img src="fotos/g1.jpg" alt="" width="700" height="980" decoding="async" draggable="false"><span class="c3-veil"></span></span>
+            <span class="c3-shade" aria-hidden="true"></span>
+          </button>
+          <button class="c3-card" type="button" aria-label="Ampliar foto 2 de 4">
+            <span class="c3-photo"><img src="fotos/g2.jpg" alt="Ana Paula" width="700" height="980" decoding="async" draggable="false"></span>
+            <span class="c3-refl" aria-hidden="true"><img src="fotos/g2.jpg" alt="" width="700" height="980" decoding="async" draggable="false"><span class="c3-veil"></span></span>
+            <span class="c3-shade" aria-hidden="true"></span>
+          </button>
+          <button class="c3-card" type="button" aria-label="Ampliar foto 3 de 4">
+            <span class="c3-photo"><img src="fotos/g3.jpg" alt="Ana Paula" width="700" height="980" decoding="async" draggable="false"></span>
+            <span class="c3-refl" aria-hidden="true"><img src="fotos/g3.jpg" alt="" width="700" height="980" decoding="async" draggable="false"><span class="c3-veil"></span></span>
+            <span class="c3-shade" aria-hidden="true"></span>
+          </button>
+          <button class="c3-card" type="button" aria-label="Ampliar foto 4 de 4">
+            <span class="c3-photo"><img src="fotos/g4.jpg" alt="Ana Paula" width="700" height="980" decoding="async" draggable="false"></span>
+            <span class="c3-refl" aria-hidden="true"><img src="fotos/g4.jpg" alt="" width="700" height="980" decoding="async" draggable="false"><span class="c3-veil"></span></span>
+            <span class="c3-shade" aria-hidden="true"></span>
+          </button>
+</div>
       </div>
       <div class="c3-dots" id="c3-dots" aria-hidden="true"><i class="is-on"></i><i></i><i></i><i></i></div>
       <p class="c3-hint">Desliza para girar · toca una foto para verla</p>
@@ -2859,6 +2900,7 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
 
   <!-- BUENOS DESEOS (opcional) -->
   <section class="section-paper wishes" id="deseos">
+    <div class="castle-bg castle-bg--r castle-bg--flip castle-bg--d2" aria-hidden="true"></div>
     <div class="container wishes-inner">
       <div class="eyebrow">Buenos deseos</div>
       <h2>Un mensaje <em>para</em> mí</h2>
@@ -2927,6 +2969,7 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
   <!-- RSVP (diseño boda-jennifer-y-marcel) -->
   <!-- RSVP (X pases) -->
   <section class="section-paper rsvp" id="rsvp">
+    <div class="castle-bg castle-bg--l castle-bg--d3" aria-hidden="true"></div>
     <div class="ink-bg ink-bg--footer ink-bg--flip ink-bg--d ink-bg--d1" aria-hidden="true"><i></i></div>
     <div class="container">
       <div class="rsvp-card">
@@ -3211,6 +3254,7 @@ function launchInvitation(){
   function openEnvelope(){
     if(opened) return;
     opened = true;
+    envHint.style.animation = 'none';
     if(typeof window._startAudio==='function') window._startAudio();
 
     // Hint desaparece
@@ -3764,25 +3808,27 @@ document.querySelectorAll('.copy-clabe').forEach(btn=>{
 const particlesContainer = document.getElementById('particles');
 const vw = () => window.innerWidth;
 const vh = () => window.innerHeight;
-const FLOWERS = [['#FFFFFF','#8FB0D8'],['#DCE8F7','#1E3A8A'],['#8FB0D8','#FFFFFF'],['#4A7BB7','#F1F3F6'],['#FFFFFF','#C0C0C0'],['#BFD5F2','#4A7BB7']];
-function flowerEl(){
+/* Flores reales (PNG con transparencia) en los tonos de la invitación */
+const FLOWER_IMGS = [
+  ['flores/f-rosa-azul-1.webp',26,38],['flores/f-rosa-azul-2.webp',26,38],['flores/f-rosa-blanca.webp',26,36],
+  ['flores/f-rosa-zafiro.webp',24,34],['flores/f-campanula.webp',22,30],['flores/f-mini-azul.webp',16,24],['flores/f-mini-blanca.webp',16,24]
+];
+const PETAL_IMGS = ['flores/p-azul.webp','flores/p-blanco.webp','flores/p-celeste.webp'];
+function imgParticle(cls, src, s){
   const el = document.createElement('div');
-  const c = FLOWERS[Math.floor(Math.random()*FLOWERS.length)];
-  const s = 14 + Math.random()*16;
-  el.className = 'particle particle--flower';
-  el.style.width = s+'px'; el.style.height = s+'px';
-  let petals = '';
-  for(let i=0;i<5;i++) petals += `<ellipse cx="12" cy="6.2" rx="3.9" ry="5.6" transform="rotate(${i*72} 12 12)" fill="${c[0]}" stroke="rgba(30,58,138,.3)" stroke-width=".5"/>`;
-  el.innerHTML = `<svg viewBox="0 0 24 24">${petals}<circle cx="12" cy="12" r="2.6" fill="${c[1]}"/></svg>`;
+  el.className = 'particle ' + cls;
+  el.style.width = s.toFixed(0)+'px'; el.style.height = s.toFixed(0)+'px';
+  const im = document.createElement('img');
+  im.src = src; im.alt = ''; im.decoding = 'async'; im.draggable = false;
+  el.appendChild(im);
   return el;
 }
+function flowerEl(){
+  const f = FLOWER_IMGS[Math.floor(Math.random()*FLOWER_IMGS.length)];
+  return imgParticle('particle--flower', f[0], f[1] + Math.random()*(f[2]-f[1]));
+}
 function petalEl(){
-  const el = document.createElement('div');
-  el.className = 'particle particle--petal';
-  const r = Math.random();
-  const col = r < .45 ? '#FFFFFF' : (r < .75 ? '#8FB0D8' : '#BFD5F2');
-  el.innerHTML = `<svg viewBox="0 0 12 16" width="100%" height="100%"><path d="M6 0 C11 4 11 11 6 16 C1 11 1 4 6 0Z" fill="${col}" stroke="rgba(30,58,138,.28)" stroke-width=".5"/></svg>`;
-  return el;
+  return imgParticle('particle--petal', PETAL_IMGS[Math.floor(Math.random()*PETAL_IMGS.length)], 14 + Math.random()*9);
 }
 function fall(el, again){
   el.style.left = Math.random()*vw()+'px';
@@ -4755,6 +4801,9 @@ initSectionFades();
   var shades = cards.map(function(c){ return c.querySelector('.c3-shade'); });
   var dots   = Array.prototype.slice.call(document.querySelectorAll('#c3-dots i'));
   var srcs   = cards.map(function(c){ return c.querySelector('.c3-photo img').getAttribute('src'); });
+  /* las tarjetas se repiten para llenar el anillo: el visor y los puntos cuentan solo las únicas */
+  srcs = srcs.filter(function(x,k){ return srcs.indexOf(x) === k; });
+  var U = srcs.length;
 
   var RMQ  = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   var STEP = 360 / n;
@@ -4787,8 +4836,8 @@ initSectionFades();
       if(c > best){ best = c; bi = i; }
     }
     if(bi !== front && dots.length){
-      if(dots[front]) dots[front].classList.remove('is-on');
-      if(dots[bi]) dots[bi].classList.add('is-on');
+      if(dots[front % dots.length]) dots[front % dots.length].classList.remove('is-on');
+      if(dots[bi % dots.length]) dots[bi % dots.length].classList.add('is-on');
     }
     front = bi;
   }
@@ -4868,9 +4917,9 @@ initSectionFades();
   var lbIdx = 0, lastFocus = null;
 
   function show(i, d){
-    lbIdx = (i + n) % n;
+    lbIdx = ((i % U) + U) % U;
     lbImg.src = srcs[lbIdx];
-    lbCount.textContent = (lbIdx + 1) + ' / ' + n;
+    lbCount.textContent = (lbIdx + 1) + ' / ' + U;
     if(d && !RMQ) gsap.fromTo(lbImg, { x: d * 36, opacity: 0 }, { x: 0, opacity: 1, duration: .45, ease: 'power3.out', immediateRender: false, overwrite: true });
   }
   function openLb(i){
