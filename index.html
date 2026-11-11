@@ -2363,6 +2363,24 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
 @media (min-width:900px){.castle-bg{opacity:.34}}
 @media (prefers-reduced-motion:reduce){.castle-bg{animation:none}}
 
+
+/* ===== MARCOS BARROCOS EN PADRES Y PADRINOS ===== */
+.fam-frames{display:flex;flex-direction:column;align-items:center;gap:26px;margin-top:10px}
+@media (min-width:820px){.fam-frames{flex-direction:row;justify-content:center;gap:40px}}
+.fam-frame{position:relative;margin:0;width:min(86vw,340px);aspect-ratio:638/920;display:flex;align-items:center;justify-content:center;isolation:isolate;
+  animation:levitate 6.5s ease-in-out -4.1s infinite;filter:drop-shadow(0 14px 22px rgba(14,27,69,.18))}
+.fam-frame--b{animation-delay:-2.2s}
+.fam-frame::before{content:"";position:absolute;inset:14% 16% 12% 16%;border-radius:50%;z-index:-2;
+  background:radial-gradient(ellipse at 50% 38%,#FFFFFF 0%,#FBF6EE 62%,#EEF1F5 100%);
+  box-shadow:inset 0 0 18px rgba(110,115,120,.22)}
+.fam-frame::after{content:"";position:absolute;inset:0;z-index:-1;background:url('marco/marco-plata.webp') center/contain no-repeat;pointer-events:none}
+.fam-frame-in{width:62%;text-align:center;padding:8% 0 4%}
+.fam-frame .fam-role{font-family:var(--display);font-style:italic;font-weight:600;font-size:clamp(20px,5.6vw,26px);letter-spacing:0;text-transform:none;color:#4A7BB7;padding:0;margin:0 0 12px;line-height:1.2}
+.fam-frame .fam-names{animation:none!important;gap:4px}
+.fam-frame .fam-name{font-size:clamp(18px,5vw,22px);line-height:1.3;font-weight:600}
+.fam-frame .fam-amp{font-size:18px}
+@media (prefers-reduced-motion:reduce){.fam-frame{animation:none}}
+
 </style>
 </head>
 <body>
@@ -2478,20 +2496,30 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
     <div class="castle-bg castle-bg--b castle-bg--r castle-bg--d2" aria-hidden="true"></div>
     <div class="ink-bg ink-bg--top ink-bg--b ink-bg--d1" aria-hidden="true"><i></i></div>
     <div class="container fam-inner">
-      <div class="eyebrow">Mi familia</div>
-      <h2>Mis <em>padres</em></h2>
-      <ul class="fam-names">
-        <li class="fam-name">Juan Pablo Miranda Narváez</li>
-        <li class="fam-amp" aria-hidden="true">y</li>
-        <li class="fam-name">Araceli del Carmen Cruz Balcazar</li>
-      </ul>
-      <div class="fam-sep" aria-hidden="true"><span></span></div>
-      <div class="fam-role">Padrinos de Acción de Gracias</div>
-      <ul class="fam-names">
-        <li class="fam-name">Carlos Mario Carrera Belueta</li>
-        <li class="fam-amp" aria-hidden="true">y</li>
-        <li class="fam-name">María Trinidad de la Cruz Colorado</li>
-      </ul>
+      <div class="eyebrow">Con amor</div>
+      <h2>Mi <em>familia</em></h2>
+      <div class="fam-frames">
+        <figure class="fam-frame">
+          <div class="fam-frame-in">
+            <div class="fam-role">Mis padres</div>
+            <ul class="fam-names">
+              <li class="fam-name">Juan Pablo Miranda Narváez</li>
+              <li class="fam-amp" aria-hidden="true">y</li>
+              <li class="fam-name">Araceli del Carmen Cruz Balcazar</li>
+            </ul>
+          </div>
+        </figure>
+        <figure class="fam-frame fam-frame--b">
+          <div class="fam-frame-in">
+            <div class="fam-role">Padrinos de<br>Acción de Gracias</div>
+            <ul class="fam-names">
+              <li class="fam-name">Carlos Mario Carrera Belueta</li>
+              <li class="fam-amp" aria-hidden="true">y</li>
+              <li class="fam-name">María Trinidad de la Cruz Colorado</li>
+            </ul>
+          </div>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -2538,10 +2566,10 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
                 <path d="M22 8 L22 16 M22 28 L22 36 M8 22 L16 22 M28 22 L36 22" opacity=".6"/>
               </g>
             </svg>
-            <div class="loc-type">Misa de XV años</div>
+            <div class="loc-type">Misa de Acción de Gracias</div>
             <div class="loc-name">Parroquia Nuestra<br>Señora del Carmen</div>
             <div class="loc-time">6:00 p.m.</div>
-            <div class="loc-addr">Av. Principal S/N, R/a Estanzuela<br>Villahermosa, Tabasco · C.P. 86288</div>
+            <div class="loc-addr">RA. Estanzuela, calle principal S/N.<br>C.P. 86288, Villahermosa, Tabasco</div>
             <a class="loc-btn" href="https://www.google.com/maps/place/Parroquia+Nuestra+Se%C3%B1ora+del+Carmen/@17.8717116,-92.91674,17z/data=!3m1!4b1!4m6!3m5!1s0x85eddb75edef2c27:0xf03d3c172a3d468d!8m2!3d17.8717116!4d-92.91674!16s%2Fg%2F11kqmzhmm0" target="_blank" rel="noopener">
               <svg class="loc-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Cómo llegar
@@ -2562,7 +2590,7 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
             <div class="loc-type">Recepción</div>
             <div class="loc-name">Salón<br>Premier</div>
             <div class="loc-time">7:30 p.m.</div>
-            <div class="loc-addr">Pablo Romero Olive, Col. Plutarco Elías Calles<br>Villahermosa, Tabasco · C.P. 86294</div>
+            <div class="loc-addr">Col. Plutarco Elías Calles, calle Pablo Romero Olive<br>C.P. 86294, Villahermosa, Tabasco</div>
             <a class="loc-btn" href="https://www.google.com/maps/place/Sal%C3%B3n+Premier/@17.9559672,-92.9200361,17z/data=!3m1!4b1!4m6!3m5!1s0x85edd9c00f5e6fe5:0xce12310709fb4de0!8m2!3d17.9559672!4d-92.9200361!16s%2Fg%2F11b6rxsp3c" target="_blank" rel="noopener">
               <svg class="loc-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Cómo llegar
@@ -2673,7 +2701,7 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
           </div>
           <div class="itin-card">
             <div class="itin-hora">6:00 p.m.</div>
-            <div class="itin-tit">Misa de XV años</div>
+            <div class="itin-tit">Misa de Acción de Gracias</div>
             <div class="itin-lugar">Parroquia Nuestra Señora del Carmen</div>
           </div>
         </div>
@@ -2719,7 +2747,7 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
         <img class="dz-fig-img" src="caballero.png" alt="Caballero con traje formal" width="261" height="584" decoding="async">
         <figcaption style="display:contents">
           <span class="dz-fig-label">Caballeros</span>
-          <span class="dz-fig-sub">Traje formal</span>
+          <span class="dz-fig-sub">Pantalón y camisa manga larga</span>
         </figcaption>
       </figure>
       <figure class="dz-fig">
@@ -2764,70 +2792,61 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
     <div class="c3-wrap">
       <div class="c3-scene protect" id="c3-scene" role="region" aria-roledescription="carrusel" aria-label="Galería de fotos de Ana Paula">
         <div class="c3-ring" id="c3-ring">
-          <button class="c3-card" type="button" aria-label="Ampliar foto 1 de 4">
+          <button class="c3-card" type="button" aria-label="Ampliar foto 1 de 3">
             <span class="c3-photo"><img src="fotos/g1.jpg" alt="Ana Paula" width="700" height="980" decoding="async" draggable="false"></span>
             <span class="c3-refl" aria-hidden="true"><img src="fotos/g1.jpg" alt="" width="700" height="980" decoding="async" draggable="false"><span class="c3-veil"></span></span>
             <span class="c3-shade" aria-hidden="true"></span>
           </button>
-          <button class="c3-card" type="button" aria-label="Ampliar foto 2 de 4">
+          <button class="c3-card" type="button" aria-label="Ampliar foto 2 de 3">
             <span class="c3-photo"><img src="fotos/g2.jpg" alt="Ana Paula" width="700" height="980" decoding="async" draggable="false"></span>
             <span class="c3-refl" aria-hidden="true"><img src="fotos/g2.jpg" alt="" width="700" height="980" decoding="async" draggable="false"><span class="c3-veil"></span></span>
             <span class="c3-shade" aria-hidden="true"></span>
           </button>
-          <button class="c3-card" type="button" aria-label="Ampliar foto 3 de 4">
+          <button class="c3-card" type="button" aria-label="Ampliar foto 3 de 3">
             <span class="c3-photo"><img src="fotos/g3.jpg" alt="Ana Paula" width="700" height="980" decoding="async" draggable="false"></span>
             <span class="c3-refl" aria-hidden="true"><img src="fotos/g3.jpg" alt="" width="700" height="980" decoding="async" draggable="false"><span class="c3-veil"></span></span>
             <span class="c3-shade" aria-hidden="true"></span>
           </button>
-          <button class="c3-card" type="button" aria-label="Ampliar foto 4 de 4">
-            <span class="c3-photo"><img src="fotos/g4.jpg" alt="Ana Paula" width="700" height="980" decoding="async" draggable="false"></span>
-            <span class="c3-refl" aria-hidden="true"><img src="fotos/g4.jpg" alt="" width="700" height="980" decoding="async" draggable="false"><span class="c3-veil"></span></span>
-            <span class="c3-shade" aria-hidden="true"></span>
-          </button>
-                  <button class="c3-card" type="button" aria-label="Ampliar foto 1 de 4">
+          <button class="c3-card" type="button" aria-label="Ampliar foto 1 de 3">
             <span class="c3-photo"><img src="fotos/g1.jpg" alt="Ana Paula" width="700" height="980" decoding="async" draggable="false"></span>
             <span class="c3-refl" aria-hidden="true"><img src="fotos/g1.jpg" alt="" width="700" height="980" decoding="async" draggable="false"><span class="c3-veil"></span></span>
             <span class="c3-shade" aria-hidden="true"></span>
           </button>
-          <button class="c3-card" type="button" aria-label="Ampliar foto 2 de 4">
+          <button class="c3-card" type="button" aria-label="Ampliar foto 2 de 3">
             <span class="c3-photo"><img src="fotos/g2.jpg" alt="Ana Paula" width="700" height="980" decoding="async" draggable="false"></span>
             <span class="c3-refl" aria-hidden="true"><img src="fotos/g2.jpg" alt="" width="700" height="980" decoding="async" draggable="false"><span class="c3-veil"></span></span>
             <span class="c3-shade" aria-hidden="true"></span>
           </button>
-          <button class="c3-card" type="button" aria-label="Ampliar foto 3 de 4">
+          <button class="c3-card" type="button" aria-label="Ampliar foto 3 de 3">
             <span class="c3-photo"><img src="fotos/g3.jpg" alt="Ana Paula" width="700" height="980" decoding="async" draggable="false"></span>
             <span class="c3-refl" aria-hidden="true"><img src="fotos/g3.jpg" alt="" width="700" height="980" decoding="async" draggable="false"><span class="c3-veil"></span></span>
             <span class="c3-shade" aria-hidden="true"></span>
           </button>
-          <button class="c3-card" type="button" aria-label="Ampliar foto 4 de 4">
-            <span class="c3-photo"><img src="fotos/g4.jpg" alt="Ana Paula" width="700" height="980" decoding="async" draggable="false"></span>
-            <span class="c3-refl" aria-hidden="true"><img src="fotos/g4.jpg" alt="" width="700" height="980" decoding="async" draggable="false"><span class="c3-veil"></span></span>
+          <button class="c3-card" type="button" aria-label="Ampliar foto 1 de 3">
+            <span class="c3-photo"><img src="fotos/g1.jpg" alt="Ana Paula" width="700" height="980" decoding="async" draggable="false"></span>
+            <span class="c3-refl" aria-hidden="true"><img src="fotos/g1.jpg" alt="" width="700" height="980" decoding="async" draggable="false"><span class="c3-veil"></span></span>
+            <span class="c3-shade" aria-hidden="true"></span>
+          </button>
+          <button class="c3-card" type="button" aria-label="Ampliar foto 2 de 3">
+            <span class="c3-photo"><img src="fotos/g2.jpg" alt="Ana Paula" width="700" height="980" decoding="async" draggable="false"></span>
+            <span class="c3-refl" aria-hidden="true"><img src="fotos/g2.jpg" alt="" width="700" height="980" decoding="async" draggable="false"><span class="c3-veil"></span></span>
+            <span class="c3-shade" aria-hidden="true"></span>
+          </button>
+          <button class="c3-card" type="button" aria-label="Ampliar foto 3 de 3">
+            <span class="c3-photo"><img src="fotos/g3.jpg" alt="Ana Paula" width="700" height="980" decoding="async" draggable="false"></span>
+            <span class="c3-refl" aria-hidden="true"><img src="fotos/g3.jpg" alt="" width="700" height="980" decoding="async" draggable="false"><span class="c3-veil"></span></span>
             <span class="c3-shade" aria-hidden="true"></span>
           </button>
 </div>
       </div>
-      <div class="c3-dots" id="c3-dots" aria-hidden="true"><i class="is-on"></i><i></i><i></i><i></i></div>
+      <div class="c3-dots" id="c3-dots" aria-hidden="true"><i class="is-on"></i><i></i><i></i></div>
       <p class="c3-hint">Desliza para girar · toca una foto para verla</p>
     </div>
   </section>
 
 
 
-  <!-- KIDS POLICY -->
-  <section class="section-paper kids-policy">
-    <div class="container kids-inner">
-      <h2>Una noche <em>para</em> adultos</h2>
-      <div class="kids-icon">
-        <svg width="72" height="72" viewBox="0 0 72 72" fill="none" stroke="var(--gold-deep)" stroke-width="1.2" stroke-linecap="round">
-          <circle cx="36" cy="36" r="28" style="--len:176"/>
-          <path d="M36 16 Q24 28 24 40 Q24 52 36 56 Q48 52 48 40 Q48 28 36 16 Z" style="--len:180" fill="var(--gold-soft)" fill-opacity=".25"/>
-          <path d="M36 26 L36 42" style="--len:16"/>
-          <circle cx="36" cy="46" r="2" style="--len:14" fill="var(--gold-deep)"/>
-        </svg>
-      </div>
-      <p class="kids-text">Queremos mucho a los pequeños de la familia, pero esta celebración será solo para adultos. Gracias por su comprensión y por acompañarme en una noche tan especial.</p>
-    </div>
-  </section>
+
 
 
   <!-- LLUVIA DE SOBRES (boda-jeffersson-y-vanessa) -->
@@ -2838,7 +2857,6 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
     <span class="lsb-eyebrow lsb-rv">Celebra conmigo</span>
     <h2 class="lsb-title lsb-rv">Mesa <em>de</em> regalos</h2>
     <div class="lsb-orn lsb-rv" aria-hidden="true"><div class="lsb-orn-line"></div><div class="lsb-orn-diamond-sm"></div><div class="lsb-orn-diamond"></div><div class="lsb-orn-diamond-sm"></div><div class="lsb-orn-line"></div></div>
-    <p class="lsb-intro lsb-rv">Tu presencia es mi mejor regalo. Si deseas tener un detalle conmigo, es <b>totalmente opcional</b>: puede ser el obsequio que tú consideres o una lluvia de sobres.</p>
 
     <button class="lsb-gift" id="lsbGift" type="button" aria-label="Sobre — toca para abrir" aria-expanded="false">
       <div class="lsb-body" id="lsbGiftBody">
@@ -2888,8 +2906,7 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
           <path d="M18 8 Q26 3 34 8"/>
           <rect x="20" y="28" width="12" height="2.5" rx="1.25" fill="currentColor" stroke="none" opacity=".4"/>
         </svg>
-        <p class="lsb-headline">Tu presencia es mi mejor regalo</p>
-        <p class="lsb-desc">Si deseas tener un detalle, el día de la fiesta habrá un buzón en la recepción para tu sobre, o puedes obsequiar el regalo que tú consideres.</p>
+        <p class="lsb-headline">Lluvia de sobres</p>
       </div>
     </button>
     <button class="lsb-hint" id="lsbGiftHint" type="button" aria-controls="lsbGift">Toca para abrir</button>
@@ -3810,8 +3827,8 @@ const vw = () => window.innerWidth;
 const vh = () => window.innerHeight;
 /* Flores reales (PNG con transparencia) en los tonos de la invitación */
 const FLOWER_IMGS = [
-  ['flores/f-rosa-azul-1.webp',26,38],['flores/f-rosa-azul-2.webp',26,38],['flores/f-rosa-blanca.webp',26,36],
-  ['flores/f-rosa-zafiro.webp',24,34],['flores/f-campanula.webp',22,30],['flores/f-mini-azul.webp',16,24],['flores/f-mini-blanca.webp',16,24]
+  ['flores/f-rosa-azul-1.webp',38,56],['flores/f-rosa-azul-2.webp',38,56],['flores/f-rosa-blanca.webp',38,52],
+  ['flores/f-rosa-zafiro.webp',36,50],['flores/f-campanula.webp',32,44],['flores/f-mini-azul.webp',24,34],['flores/f-mini-blanca.webp',24,34]
 ];
 const PETAL_IMGS = ['flores/p-azul.webp','flores/p-blanco.webp','flores/p-celeste.webp'];
 function imgParticle(cls, src, s){
@@ -3828,7 +3845,7 @@ function flowerEl(){
   return imgParticle('particle--flower', f[0], f[1] + Math.random()*(f[2]-f[1]));
 }
 function petalEl(){
-  return imgParticle('particle--petal', PETAL_IMGS[Math.floor(Math.random()*PETAL_IMGS.length)], 14 + Math.random()*9);
+  return imgParticle('particle--petal', PETAL_IMGS[Math.floor(Math.random()*PETAL_IMGS.length)], 20 + Math.random()*12);
 }
 function fall(el, again){
   el.style.left = Math.random()*vw()+'px';
