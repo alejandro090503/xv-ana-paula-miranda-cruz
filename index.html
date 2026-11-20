@@ -2392,6 +2392,36 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
 .lsb-desc--thanks{font-style:italic;font-weight:600;margin-top:10px}
 .lsb-gift.open .lsb-open-content{max-height:620px!important}
 .lsb-headline{background:none!important;-webkit-text-fill-color:#1E3A8A!important;color:#1E3A8A!important;animation:none!important}
+
+/* ===== CIERRE: frase + mariposa en movimiento ===== */
+.cierre{text-align:center;padding:min(14vh,120px) 0 min(16vh,140px)}
+.cierre-inner{max-width:520px;margin:0 auto}
+.cierre-orn{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:26px}
+.cierre-orn i{width:70px;height:1px;background:linear-gradient(90deg,transparent,#A7ADB5,transparent)}
+.cierre-orn b{width:8px;height:8px;background:#C0C0C0;transform:rotate(45deg);box-shadow:0 0 8px rgba(74,123,183,.5)}
+.cierre-frase{font-family:var(--display);font-style:italic;font-weight:600;font-size:clamp(30px,8.4vw,46px);line-height:1.25;margin:0 0 14px;
+  background-image:var(--foil);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#1E3A8A;
+  animation:foilSweep 7s ease-in-out infinite;padding:.2em .3em;margin-left:-.3em;margin-right:-.3em}
+.cierre-sub{font-family:var(--serif);font-style:italic;font-weight:600;font-size:21px;color:#152042;margin:0 0 6px}
+.cierre-fly{position:relative;height:190px;margin-top:10px}
+.bfly{position:absolute;left:50%;top:50%;width:92px;height:auto;margin:-40px 0 0 -46px;overflow:visible;
+  filter:drop-shadow(0 6px 10px rgba(30,58,138,.28));animation:bflyPath 14s ease-in-out infinite;will-change:transform}
+.bf-wing{transform-box:fill-box;animation:bflap .42s ease-in-out infinite alternate}
+.bf-wing--l{transform-origin:100% 50%}
+.bf-wing--r{transform-origin:0% 50%;animation-name:bflapR}
+@keyframes bflap{0%{transform:scaleX(1)}100%{transform:scaleX(.32)}}
+@keyframes bflapR{0%{transform:scaleX(1)}100%{transform:scaleX(.32)}}
+@keyframes bflyPath{
+  0%{transform:translate(-110px,30px) rotate(-14deg)}
+  25%{transform:translate(-30px,-34px) rotate(8deg)}
+  50%{transform:translate(90px,10px) rotate(16deg)}
+  75%{transform:translate(20px,50px) rotate(-6deg)}
+  100%{transform:translate(-110px,30px) rotate(-14deg)}}
+.bf-glint{position:absolute;left:50%;top:50%;width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 8px 2px rgba(143,176,216,.9);opacity:0;animation:glint 3.2s ease-in-out infinite}
+.bf-glint--1{margin:-30px 0 0 -70px}.bf-glint--2{margin:20px 0 0 40px;animation-delay:-1.1s}.bf-glint--3{margin:-10px 0 0 80px;animation-delay:-2.2s}
+@keyframes glint{0%,100%{opacity:0;transform:scale(.4)}50%{opacity:1;transform:scale(1.3)}}
+@media (prefers-reduced-motion:reduce){.bfly,.bf-wing,.bf-glint,.cierre-frase{animation:none}}
+
 </style>
 </head>
 <body>
@@ -3103,6 +3133,36 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
 
 
   <!-- FOOTER -->
+  <!-- CIERRE -->
+  <section class="section-paper cierre" id="cierre" data-top="#FBF6EE" data-bot="#FBF6EE">
+    <div class="container cierre-inner">
+      <div class="cierre-orn" aria-hidden="true"><i></i><b></b><i></i></div>
+      <p class="cierre-frase">Espero contar con tu presencia</p>
+      <p class="cierre-sub">Será una noche inolvidable a tu lado.</p>
+      <div class="cierre-fly" aria-hidden="true">
+        <svg class="bfly" viewBox="0 0 120 100">
+          <defs>
+            <linearGradient id="bfW" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#8FB0D8"/><stop offset="1" stop-color="#1E3A8A"/></linearGradient>
+            <linearGradient id="bfW2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAF2FF"/><stop offset=".5" stop-color="#4A7BB7"/><stop offset="1" stop-color="#1E3A8A"/></linearGradient>
+          </defs>
+          <g class="bf-wing bf-wing--l">
+            <path d="M60 50 C38 10 6 8 4 30 C3 48 30 52 60 50Z" fill="url(#bfW)" stroke="#C0C0C0" stroke-width="1"/>
+            <path d="M60 52 C40 56 14 66 20 82 C28 96 52 76 60 52Z" fill="url(#bfW2)" stroke="#C0C0C0" stroke-width="1"/>
+            <circle cx="22" cy="28" r="3" fill="#fff" opacity=".85"/><circle cx="28" cy="74" r="2.2" fill="#fff" opacity=".8"/>
+          </g>
+          <g class="bf-wing bf-wing--r">
+            <path d="M60 50 C82 10 114 8 116 30 C117 48 90 52 60 50Z" fill="url(#bfW)" stroke="#C0C0C0" stroke-width="1"/>
+            <path d="M60 52 C80 56 106 66 100 82 C92 96 68 76 60 52Z" fill="url(#bfW2)" stroke="#C0C0C0" stroke-width="1"/>
+            <circle cx="98" cy="28" r="3" fill="#fff" opacity=".85"/><circle cx="92" cy="74" r="2.2" fill="#fff" opacity=".8"/>
+          </g>
+          <ellipse cx="60" cy="54" rx="3" ry="16" fill="#1E3A8A"/>
+          <path d="M58 40 C54 28 48 24 44 22 M62 40 C66 28 72 24 76 22" stroke="#1E3A8A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="bf-glint bf-glint--1"></span><span class="bf-glint bf-glint--2"></span><span class="bf-glint bf-glint--3"></span>
+      </div>
+    </div>
+  </section>
+
   <footer data-top="#1E3A8A">
     <div class="container footer-inner">
       <svg class="footer-ornament" viewBox="0 0 260 60" fill="none" aria-hidden="true">
