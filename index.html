@@ -2404,13 +2404,20 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
   animation:foilSweep 7s ease-in-out infinite;padding:.2em .3em;margin-left:-.3em;margin-right:-.3em}
 .cierre-sub{font-family:var(--serif);font-style:italic;font-weight:600;font-size:21px;color:#152042;margin:0 0 6px}
 .cierre-fly{position:relative;height:190px;margin-top:10px}
-.bfly{position:absolute;left:50%;top:50%;width:92px;height:auto;margin:-40px 0 0 -46px;overflow:visible;
-  filter:drop-shadow(0 6px 10px rgba(30,58,138,.28));animation:bflyPath 14s ease-in-out infinite;will-change:transform}
-.bf-wing{transform-box:fill-box;animation:bflap .42s ease-in-out infinite alternate}
-.bf-wing--l{transform-origin:100% 50%}
-.bf-wing--r{transform-origin:0% 50%;animation-name:bflapR}
-@keyframes bflap{0%{transform:scaleX(1)}100%{transform:scaleX(.32)}}
-@keyframes bflapR{0%{transform:scaleX(1)}100%{transform:scaleX(.32)}}
+.bfly{position:absolute;left:50%;top:50%;width:110px;height:89px;margin:-44px 0 0 -55px;display:flex;
+  filter:drop-shadow(0 8px 12px rgba(30,58,138,.3));animation:bflyPath 14s ease-in-out infinite;will-change:transform}
+.bf-w{width:50%;height:100%;object-fit:contain;display:block;pointer-events:none;-webkit-user-drag:none;animation:bflap .38s ease-in-out infinite alternate;will-change:transform}
+.bf-w--l{transform-origin:100% 55%}
+.bf-w--r{transform-origin:0% 55%}
+@keyframes bflap{0%{transform:scaleX(1)}100%{transform:scaleX(.28)}}
+.bfly-mini{position:absolute;z-index:1;width:150px;height:130px;pointer-events:none}
+.bfly-mini .bfly{width:58px;height:47px;margin:-23px 0 0 -29px;animation-duration:18s}
+.bfly-mini .bf-w{animation-duration:.33s}
+.bfly-mini--a{top:90px;right:2%}
+.bfly-mini--b{top:60px;left:2%}
+.bfly-mini--b .bfly{animation-delay:-6s;animation-direction:reverse}
+.bfly-mini--c{top:40px;right:4%}
+.bfly-mini--c .bfly{animation-delay:-11s}
 @keyframes bflyPath{
   0%{transform:translate(-110px,30px) rotate(-14deg)}
   25%{transform:translate(-30px,-34px) rotate(8deg)}
@@ -2420,7 +2427,7 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
 .bf-glint{position:absolute;left:50%;top:50%;width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 8px 2px rgba(143,176,216,.9);opacity:0;animation:glint 3.2s ease-in-out infinite}
 .bf-glint--1{margin:-30px 0 0 -70px}.bf-glint--2{margin:20px 0 0 40px;animation-delay:-1.1s}.bf-glint--3{margin:-10px 0 0 80px;animation-delay:-2.2s}
 @keyframes glint{0%,100%{opacity:0;transform:scale(.4)}50%{opacity:1;transform:scale(1.3)}}
-@media (prefers-reduced-motion:reduce){.bfly,.bf-wing,.bf-glint,.cierre-frase{animation:none}}
+@media (prefers-reduced-motion:reduce){.bfly,.bf-w,.bf-glint,.cierre-frase{animation:none}}
 
 </style>
 </head>
@@ -2534,6 +2541,7 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
 
   <!-- PADRES Y PADRINOS -->
   <section class="section-paper familia" id="familia">
+    <div class="bfly-mini bfly-mini--a" aria-hidden="true"><div class="bfly"><img class="bf-w bf-w--l" src="mariposa/ala-izq.webp" alt="" draggable="false"><img class="bf-w bf-w--r" src="mariposa/ala-der.webp" alt="" draggable="false"></div><span class="bf-glint bf-glint--1"></span><span class="bf-glint bf-glint--2"></span></div>
     <div class="castle-bg castle-bg--b castle-bg--r castle-bg--d2" aria-hidden="true"></div>
     <div class="ink-bg ink-bg--top ink-bg--b ink-bg--d1" aria-hidden="true"><i></i></div>
     <div class="container fam-inner">
@@ -2823,6 +2831,7 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
   <!-- GALERÍA 3D CON ESPEJO (boda-veronica-y-andres) -->
   <!-- GALERÍA — CARRUSEL 3D -->
   <section class="section-surface gallery" id="galeria">
+    <div class="bfly-mini bfly-mini--c" aria-hidden="true"><div class="bfly"><img class="bf-w bf-w--l" src="mariposa/ala-izq.webp" alt="" draggable="false"><img class="bf-w bf-w--r" src="mariposa/ala-der.webp" alt="" draggable="false"></div><span class="bf-glint bf-glint--1"></span><span class="bf-glint bf-glint--2"></span></div>
     <div class="castle-bg castle-bg--b castle-bg--l castle-bg--flip" aria-hidden="true"></div>
     <div class="container c3-head">
       <div class="eyebrow">Momentos</div>
@@ -2892,6 +2901,7 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
 
   <!-- LLUVIA DE SOBRES (boda-jeffersson-y-vanessa) -->
   <section class="section-surface gifts" id="regalos">
+    <div class="bfly-mini bfly-mini--b" aria-hidden="true"><div class="bfly"><img class="bf-w bf-w--l" src="mariposa/ala-izq.webp" alt="" draggable="false"><img class="bf-w bf-w--r" src="mariposa/ala-der.webp" alt="" draggable="false"></div><span class="bf-glint bf-glint--1"></span><span class="bf-glint bf-glint--2"></span></div>
     <div class="ink-bg ink-bg--corner ink-bg--b ink-bg--d3" aria-hidden="true"><i></i></div>
   <div class="lsb-rain" id="lsbRain" aria-hidden="true"></div>
   <div class="container lsb-stage">
@@ -3140,24 +3150,7 @@ html.no-cap .c3-card img,html.no-cap .c3-lb-img{filter:blur(28px)!important}
       <p class="cierre-frase">Espero contar con tu presencia</p>
       <p class="cierre-sub">Será una noche inolvidable a tu lado.</p>
       <div class="cierre-fly" aria-hidden="true">
-        <svg class="bfly" viewBox="0 0 120 100">
-          <defs>
-            <linearGradient id="bfW" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#8FB0D8"/><stop offset="1" stop-color="#1E3A8A"/></linearGradient>
-            <linearGradient id="bfW2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAF2FF"/><stop offset=".5" stop-color="#4A7BB7"/><stop offset="1" stop-color="#1E3A8A"/></linearGradient>
-          </defs>
-          <g class="bf-wing bf-wing--l">
-            <path d="M60 50 C38 10 6 8 4 30 C3 48 30 52 60 50Z" fill="url(#bfW)" stroke="#C0C0C0" stroke-width="1"/>
-            <path d="M60 52 C40 56 14 66 20 82 C28 96 52 76 60 52Z" fill="url(#bfW2)" stroke="#C0C0C0" stroke-width="1"/>
-            <circle cx="22" cy="28" r="3" fill="#fff" opacity=".85"/><circle cx="28" cy="74" r="2.2" fill="#fff" opacity=".8"/>
-          </g>
-          <g class="bf-wing bf-wing--r">
-            <path d="M60 50 C82 10 114 8 116 30 C117 48 90 52 60 50Z" fill="url(#bfW)" stroke="#C0C0C0" stroke-width="1"/>
-            <path d="M60 52 C80 56 106 66 100 82 C92 96 68 76 60 52Z" fill="url(#bfW2)" stroke="#C0C0C0" stroke-width="1"/>
-            <circle cx="98" cy="28" r="3" fill="#fff" opacity=".85"/><circle cx="92" cy="74" r="2.2" fill="#fff" opacity=".8"/>
-          </g>
-          <ellipse cx="60" cy="54" rx="3" ry="16" fill="#1E3A8A"/>
-          <path d="M58 40 C54 28 48 24 44 22 M62 40 C66 28 72 24 76 22" stroke="#1E3A8A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-        </svg>
+        <div class="bfly"><img class="bf-w bf-w--l" src="mariposa/ala-izq.webp" alt="" draggable="false"><img class="bf-w bf-w--r" src="mariposa/ala-der.webp" alt="" draggable="false"></div>
         <span class="bf-glint bf-glint--1"></span><span class="bf-glint bf-glint--2"></span><span class="bf-glint bf-glint--3"></span>
       </div>
     </div>
